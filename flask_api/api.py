@@ -3,20 +3,21 @@ import json
 
 app = Flask(__name__)
 
-with open("C:\\Users\\hp\\Desktop\\pythonProject\\web_scraping\\personal.json") as json_file:
+with open("C:\\Users\\hp\\Desktop\\pythonProject\\scrapery\\quetetutorial\\items.json") as json_file:
         json_data = json.load(json_file)
-        print(json_data)
+        #print(json_data)
 
 tasks = [
-    {
-        'id': 1,
-        'Name': json_data['x']['name'],
-        'Market_cap': json_data['y']['market_cap'], 
-        'Price': json_data['z']['price'],
-        'Valume':json_data['w']['valume'],
-        'Circulating_supply': json_data['t']['circulating_supply']
+    json_data
+    # {
+    #     'id': json_data['id'],
+    #     'Name': json_data['name'],
+    #     'Market_cap': json_data['market_cap'], 
+    #     'Price': json_data['price'],
+    #     'Volume':json_data['volume'],
+    #     'Circulating_supply': json_data['circulating_supply']
 
-    }
+    # }
 ]
 
 @app.route('/flask/api/v1.0/tasks', methods=['GET'])
